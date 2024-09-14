@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+  <div class="main">
+    <div class="head1">
+      <h1>Disease Symptom Checker</h1>
+    </div>
+    <div class="input">
+      <div class="innput">
+        <h2>Enter the Symptoms </h2>
+        <form action="/submit" method="post">
+          <textarea name="tk" id="tk"></textarea>
+          <input class="sb" type="submit" value="Submit">
+        </form>
+        <p class="c">Cure Of Disease</p>
+        <textarea name="cure" id="cure" >{{cure_response}}</textarea>
+      </div>
+    </div>
+    <div class="resp">
+      <p class="h">Result here</p>
+      <div id="response">{{ response }}</div>
+    </div>
+    <form action="/play" method="get">
+      <input class="vc" type="submit" value="🎤" style="font-size: 24px";>
+      <p class="vp">Voice Input</p>
+    </form>
+    <div class="voicedisplay">
+      <p class="vt">Voice Text</p>
+      <div id="cmd">{{ command }}</div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<!-- Run Here because it is the development server for the flask in python -->
+<!--http://localhost:5000/  -->
